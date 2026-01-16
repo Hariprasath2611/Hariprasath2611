@@ -1,45 +1,32 @@
 <div align="center">
 
-<!-- ===================== HEADER ===================== -->
-<img 
-  src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=220&section=header&text=HARIPRASATH&fontSize=70&animation=fadeIn&fontColor=39FF14&fontAlignY=38"
-  width="100%"
-/>
+<!-- HEADER SECTION -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=006450&height=200&section=header&text=HARIPRASATH&fontSize=70&animation=fadeIn&fontAlignY=38" width="100%"/>
 
-<!-- ===================== ROLES ===================== -->
 <table width="100%">
   <tr>
-    <td align="center">💻 <b>HACKER-STYLE DEVELOPER</b></td>
-    <td align="center">📱 <b>APP DEVELOPER</b></td>
-    <td align="center">🌐 <b>WEB DEVELOPER</b></td>
+    <td align="center" width="33%">🚀 <b>UI/UX DESIGNER</b></td>
+    <td align="center" width="33%">
+      <!-- Replace the link below with your own QR code image link -->
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://github.com/HARIPRASATH2611" width="100px"/>
+    </td>
+    <td align="center" width="33%">🌐 <b>WEB DEVELOPER</b></td>
   </tr>
 </table>
 
 <br/>
 
-<!-- ===================== TYPING ANIMATION ===================== -->
-<h2>
-  <img 
-    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=39FF14&center=true&vCenter=true&width=550&lines=Neon+Green+Hacker+Theme;Flutter+%26+Firebase+Developer;UI%2FUX+Designer;Tech+Enthusiast;Building+Ideas+Into+Reality"
-    alt="Typing Animation"
-  />
-</h2>
+<!-- TYPING ANIMATION -->
+<h1>
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=53D1B0&center=true&vCenter=true&width=500&lines=A+passionate+Developer+%26+Designer;UI%2FUX+Designer;App+Developer;Tech+Enthusiast" alt="Typing SVG" />
+  </a>
+</h1>
 
-<hr width="80%"/>
+<hr/>
 
-<!-- ===================== ABOUT ===================== -->
-<h3>👨‍💻 About Me</h3>
-
-🎓 Second Year **Computer Engineering Student**  
-🚀 Founder of **Luminary Forge**  
-📱 Flutter & Firebase Developer  
-🎨 UI/UX Designer  
-🌱 Learning **Web3, Cloud & Scalable Systems**
-
-<hr width="80%"/>
-
-<!-- ===================== TECH STACK ===================== -->
-<h3>🛠️ Tech Stack</h3>
+<!-- TECH STACK SECTION -->
+<h3>My Tech Stack</h3>
 
 <table>
   <tr>
@@ -49,60 +36,52 @@
     <th>💻 Languages</th>
   </tr>
   <tr>
-    <td align="center">
-      <img src="https://img.shields.io/badge/HTML5-0D1117?style=for-the-badge&logo=html5&logoColor=39FF14"/><br/>
-      <img src="https://img.shields.io/badge/CSS3-0D1117?style=for-the-badge&logo=css3&logoColor=39FF14"/><br/>
-      <img src="https://img.shields.io/badge/JavaScript-0D1117?style=for-the-badge&logo=javascript&logoColor=39FF14"/><br/>
-      <img src="https://img.shields.io/badge/Bootstrap-0D1117?style=for-the-badge&logo=bootstrap&logoColor=39FF14"/>
+    <td>
+      <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/><br/>
+      <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"/>
     </td>
-    <td align="center">
-      <img src="https://img.shields.io/badge/Dart-0D1117?style=for-the-badge&logo=dart&logoColor=39FF14"/><br/>
-      <img src="https://img.shields.io/badge/Flutter-0D1117?style=for-the-badge&logo=flutter&logoColor=39FF14"/>
+    <td>
+      <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
     </td>
-    <td align="center">
-      <img src="https://img.shields.io/badge/Figma-0D1117?style=for-the-badge&logo=figma&logoColor=39FF14"/><br/>
-      <img src="https://img.shields.io/badge/Canva-0D1117?style=for-the-badge&logo=canva&logoColor=39FF14"/>
+    <td>
+      <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white"/>
     </td>
-    <td align="center">
-      <img src="https://img.shields.io/badge/C-0D1117?style=for-the-badge&logo=c&logoColor=39FF14"/><br/>
-      <img src="https://img.shields.io/badge/Python-0D1117?style=for-the-badge&logo=python&logoColor=39FF14"/><br/>
-      <img src="https://img.shields.io/badge/Java-0D1117?style=for-the-badge&logo=java&logoColor=39FF14"/>
+    <td>
+      <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>
     </td>
   </tr>
 </table>
 
-<hr width="80%"/>
+<br/>
 
-<!-- ===================== GITHUB STATS ===================== -->
-<h3>📊 GitHub Stats</h3>
-
-<img 
-  src="https://github-readme-stats.vercel.app/api?username=Hariprasath2611&show_icons=true&bg_color=0D1117&title_color=39FF14&icon_color=39FF14&text_color=FFFFFF&hide_border=true"
-  height="165"
-/>
+<!-- GITHUB STATS SECTION -->
+<h3>Github stats</h3>
+<img src="https://github-readme-stats.vercel.app/api?username=HARIPRASATH2611&show_icons=true&theme=tokyonight&border_radius=10" alt="Stats" />
+<br/><br/>
+<h3>Languages used</h3>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HARIPRASATH2611&layout=compact&theme=tokyonight&border_radius=10" alt="Top Langs" />
 
 <br/><br/>
 
-<img 
-  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hariprasath2611&layout=compact&bg_color=0D1117&title_color=39FF14&text_color=FFFFFF&hide_border=true"
-  height="140"
-/>
+<!-- CONTRIBUTION GRAPH -->
+<h3>Contribution graph</h3>
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=HARIPRASATH2611&theme=tokyo-night&area=true&hide_border=true" width="100%" alt="Contribution Graph" />
 
 <br/><br/>
 
-<img 
-  src="https://github-readme-streak-stats.herokuapp.com/?user=Hariprasath2611&theme=dark&ring=39FF14&fire=39FF14&currStreakLabel=39FF14&hide_border=true"
-  height="165"
-/>
+<!-- SUMMARY CARD -->
+<img src="https://github-readme-stats.vercel.app/api?username=HARIPRASATH2611&show_icons=true&theme=tokyonight&hide_border=false&include_all_commits=true&count_private=true" alt="Summary Card" />
 
-<hr width="80%"/>
+<br/><br/>
 
-<!-- ===================== FOOTER ===================== -->
-<h3>🟢 System Online. Thanks for visiting.</h3>
-
-<img 
-  src="https://capsule-render.vercel.app/api?type=rect&color=39FF14&height=30&section=footer"
-  width="100%"
-/>
+<!-- FOOTER -->
+<h3>Thanks for visiting my page</h3>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=006450&height=30&section=footer" width="100%"/>
 
 </div>
