@@ -1,15 +1,12 @@
 <div align="center">
 
 <!-- ===================== HEADER ===================== -->
-<img 
-  src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=220&section=header&text=HARIPRASATH&fontSize=70&animation=fadeIn&fontColor=39FF14&fontAlignY=38"
-  width="100%"
-/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0D1117&height=220&section=header&text=HARIPRASATH&fontSize=70&animation=fadeIn&fontColor=39FF14&fontAlignY=38" width="100%"/>
 
 <!-- ===================== ROLES ===================== -->
 <table width="100%">
   <tr>
-    <td align="center">💻 <b>HACKER-STYLE DEVELOPER</b></td>
+    <td align="center">💻 <b>DEVELOPER</b></td>
     <td align="center">📱 <b>APP DEVELOPER</b></td>
     <td align="center">🌐 <b>WEB DEVELOPER</b></td>
   </tr>
@@ -17,13 +14,8 @@
 
 <br/>
 
-<!-- ===================== TYPING ANIMATION ===================== -->
-<h2>
-  <img 
-    src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=39FF14&center=true&vCenter=true&width=550&lines=Neon+Green+Hacker+Theme;Flutter+%26+Firebase+Developer;UI%2FUX+Designer;Tech+Enthusiast;Building+Ideas+Into+Reality"
-    alt="Typing Animation"
-  />
-</h2>
+<!-- ===================== TYPING ===================== -->
+<img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=39FF14&center=true&vCenter=true&width=550&lines=Neon+Green+Hacker+Theme;Flutter+%26+Firebase+Developer;UI%2FUX+Designer;Tech+Enthusiast;Building+Ideas+Into+Reality" />
 
 <hr width="80%"/>
 
@@ -52,8 +44,7 @@
     <td align="center">
       <img src="https://img.shields.io/badge/HTML5-0D1117?style=for-the-badge&logo=html5&logoColor=39FF14"/><br/>
       <img src="https://img.shields.io/badge/CSS3-0D1117?style=for-the-badge&logo=css3&logoColor=39FF14"/><br/>
-      <img src="https://img.shields.io/badge/JavaScript-0D1117?style=for-the-badge&logo=javascript&logoColor=39FF14"/><br/>
-      <img src="https://img.shields.io/badge/Bootstrap-0D1117?style=for-the-badge&logo=bootstrap&logoColor=39FF14"/>
+      <img src="https://img.shields.io/badge/JavaScript-0D1117?style=for-the-badge&logo=javascript&logoColor=39FF14"/>
     </td>
     <td align="center">
       <img src="https://img.shields.io/badge/Dart-0D1117?style=for-the-badge&logo=dart&logoColor=39FF14"/><br/>
@@ -73,36 +64,24 @@
 
 <hr width="80%"/>
 
-<!-- ===================== GITHUB STATS ===================== -->
-<h3>📊 GitHub Stats</h3>
+</div>
 
-<img 
-  src="https://github-readme-stats.vercel.app/api?username=Hariprasath2611&show_icons=true&bg_color=0D1117&title_color=39FF14&icon_color=39FF14&text_color=FFFFFF&hide_border=true"
-  height="165"
-/>
+<!-- ===================== GITHUB STATS (MARKDOWN – NO ERRORS) ===================== -->
 
-<br/><br/>
+## 📊 GitHub Stats
 
-<img 
-  src="https://github-readme-stats.vercel.app/api/top-langs/?username=Hariprasath2611&layout=compact&bg_color=0D1117&title_color=39FF14&text_color=FFFFFF&hide_border=true"
-  height="140"
-/>
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=Hariprasath2611&show_icons=true&bg_color=0D1117&title_color=39FF14&icon_color=39FF14&text_color=FFFFFF&hide_border=true&cache_seconds=86400)
 
-<br/><br/>
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=Hariprasath2611&layout=compact&bg_color=0D1117&title_color=39FF14&text_color=FFFFFF&hide_border=true&cache_seconds=86400)
 
-<img 
-  src="https://github-readme-streak-stats.herokuapp.com/?user=Hariprasath2611&theme=dark&ring=39FF14&fire=39FF14&currStreakLabel=39FF14&hide_border=true"
-  height="165"
-/>
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=Hariprasath2611&theme=dark&ring=39FF14&fire=39FF14&currStreakLabel=39FF14&hide_border=true)
 
-<hr width="80%"/>
+---
 
-<!-- ===================== FOOTER ===================== -->
-<h3>🟢 System Online. Thanks for visiting.</h3>
+<div align="center">
 
-<img 
-  src="https://capsule-render.vercel.app/api?type=rect&color=39FF14&height=30&section=footer"
-  width="100%"
-/>
+<h3>🟢 System Online — Thanks for visiting</h3>
+
+<img src="https://capsule-render.vercel.app/api?type=rect&color=39FF14&height=30&section=footer" width="100%"/>
 
 </div>
