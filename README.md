@@ -60,19 +60,21 @@
 <br/>
 
 <!-- GITHUB STATS SECTION -->
-<h3>📊 Github Stats</h3>
-<img src="https://github-readme-stats.vercel.app/api?username=HARIPRASATH2611&show_icons=true&theme=tokyonight&border_radius=10&cache_seconds=1800" alt="GitHub Stats" />
+<div align="center">
+  <h3>📊 Github Stats</h3>
+  <img src="https://github-readme-stats-git-master-anuraghazra.vercel.app/api?username=HARIPRASATH2611&show_icons=true&theme=tokyonight&border_radius=10&include_all_commits=true&count_private=true" alt="GitHub Stats" />
 
-<br/>
+  <br/><br/>
 
-<h3>🛠️ Languages Used</h3>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HARIPRASATH2611&layout=compact&theme=tokyonight&border_radius=10&cache_seconds=1800" alt="Top Languages" />
+  <h3>🛠️ Languages Used</h3>
+  <img src="https://github-readme-stats-git-master-anuraghazra.vercel.app/api/top-langs/?username=HARIPRASATH2611&layout=compact&theme=tokyonight&border_radius=10&hide=css,html" alt="Top Languages" />
 
-<br/>
+  <br/><br/>
 
-<!-- CONTRIBUTION GRAPH -->
-<h3>📈 Contribution Graph</h3>
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=HARIPRASATH2611&theme=tokyo-night&area=true&hide_border=true" width="100%" alt="Contribution Graph" />
+  <!-- STREAK STATS (Often more stable) -->
+  <h3>🔥 Current Streak</h3>
+  <img src="https://github-readme-streak-stats.herokuapp.com/?user=HARIPRASATH2611&theme=tokyonight&hide_border=true" alt="Streak Stats" />
+</div>
 
 <h3>Thanks for visiting my page</h3>
 
