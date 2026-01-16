@@ -1,67 +1,79 @@
-<h1 align="center">Hi 👋, I'm Hari Prasath</h1>
-<h3 align="center">Second Year Computer Engineering Student | Developer</h3>
+<div align="center">
 
-<p align="center">
-  <img src="https://readme-typing-svg.herokuapp.com?lines=Flutter+Developer;Firebase+Enthusiast;Startup+Founder+%40+Luminary+Forge;Always+Learning+New+Things&center=true&width=500&height=45">
-</p>
+<!-- HEADER SECTION - Waving Banner -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=006450&height=200&section=header&text=HARIPRASATH&fontSize=70&animation=fadeIn&fontAlignY=38" width="100%"/>
 
----
+<!-- TOP ROLES -->
+<table>
+  <tr>
+    <td align="center" width="33%">🚀 <b>UI/UX DESIGNER</b></td>
+    <td align="center" width="33%">📱 <b>APP DEVELOPER</b></td>
+    <td align="center" width="33%">🌐 <b>WEB DEVELOPER</b></td>
+  </tr>
+</table>
 
-## 🚀 About Me
-- 🎓 Second year **Computer Engineering** student  
-- 💻 Passionate about **App Development & Web Technologies**
-- 🚀 Founder of **Luminary Forge**
-- 📱 Working with **Flutter & Firebase**
-- 🌱 Learning **Web3, Cloud & Scalable Systems**
+<br/>
 
----
-
-## 🛠️ Tech Stack
-
-### 👨‍💻 Languages
-<p>
-  <img src="https://skillicons.dev/icons?i=java,python,dart,c,cpp,javascript" />
-</p>
-
-### ⚙️ Frameworks & Tools
-<p>
-  <img src="https://skillicons.dev/icons?i=flutter,firebase,nodejs,react,git,github,figma" />
-</p>
-
----
-
-## 📊 GitHub Stats
-<p align="center">
-  <img src="https://github-readme-stats.vercel.app/api?username=HARIPRASATH2611&show_icons=true&theme=tokyonight" height="165"/>
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=HARIPRASATH2611&theme=tokyonight" height="165"/>
-</p>
-
----
-
-## 📌 Featured Projects
-- 🔹 **Skillscore** – Web3 skill verification platform  
-- 🔹 **Antigravity** – Digital products marketplace  
-- 🔹 **Flutter Apps** – Firebase-powered mobile apps  
-
-*(Add project links here)*
-
----
-
-## 🌐 Connect With Me
-<p>
-  <a href="https://github.com/Hariprasath2611">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" />
+<!-- ANIMATED TYPING TEXT -->
+<h1>
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=53D1B0&center=true&vCenter=true&width=435&lines=A+passionate+Developer+%26+Designer;UI%2FUX+Designer;App+Developer;Tech+Enthusiast" alt="Typing SVG" />
   </a>
-  <a href="https://www.linkedin.com/in/hari-prasath-b19068379/">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin" />
-  </a>
-</p>
+</h1>
 
----
+<hr/>
 
-## ⚡ Fun Fact
-> “Code is not just syntax, it’s a way to build ideas into reality.”
+<!-- TECH STACK SECTION -->
+<h3>My Tech Stack</h3>
 
----
+<table>
+  <tr>
+    <th>🌐 Web</th>
+    <th>📱 App</th>
+    <th>🎨 Design</th>
+    <th>💻 Languages</th>
+  </tr>
+  <tr>
+    <td>
+      <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/><br/>
+      <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"/>
+    </td>
+    <td>
+      <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
+    </td>
+    <td>
+      <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white"/>
+    </td>
+    <td>
+      <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/><br/>
+      <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/>
+    </td>
+  </tr>
+</table>
 
-⭐ **If you like my work, consider starring my repositories!**
+<br/>
+
+<!-- GITHUB STATS SECTION -->
+<h3>GitHub Stats</h3>
+<img src="https://github-readme-stats.vercel.app/api?username=HARIPRASATH2611&show_icons=true&theme=tokyonight&rank_icon=github" alt="Stats" />
+<br/><br/>
+<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=HARIPRASATH2611&layout=compact&theme=tokyonight" alt="Top Langs" />
+
+<br/><br/>
+
+<!-- CONTRIBUTION GRAPH -->
+<h3>Contribution Graph</h3>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=HARIPRASATH2611&theme=tokyonight" alt="Streak" />
+
+<br/><br/>
+
+<!-- FOOTER -->
+<h3>Thanks for visiting my page!</h3>
+<img src="https://capsule-render.vercel.app/api?type=rect&color=006450&height=30&section=footer" width="100%"/>
+
+</div>
