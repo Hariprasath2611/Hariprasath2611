@@ -28,6 +28,15 @@
 <hr/>
 
 <!-- TECH STACK SECTION -->
+<!-- GITHUB TROPHIES -->
+<h3>🏆 Trophies</h3>
+<img src="https://github-profile-trophy.vercel.app/?username=HARIPRASATH2611&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" width="100%" alt="Trophies" />
+
+<br/>
+
+<hr/>
+
+<!-- TECH STACK SECTION -->
 <h3>My Tech Stack</h3>
 
 <table>
@@ -76,10 +85,17 @@
 
 <br/>
 
+<h3>🔥 Streak Stats</h3>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=HARIPRASATH2611&theme=tokyonight&border_radius=10" alt="Streak Stats" />
+
+<br/>
+
 <!-- ACTIVITY GRAPH (Using a different stable provider) -->
 <h3>📈 Contribution Graph</h3>
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=HARIPRASATH2611&theme=tokyo-night&area=true&hide_border=true" width="100%" alt="Contribution Graph" />
 
+
 <h3>Thanks for visiting my page</h3>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=006450&height=100&section=footer&fontSize=70&animation=fadeIn&fontAlignY=38" width="100%"/>
 
 </div>
