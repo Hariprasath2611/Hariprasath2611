@@ -99,7 +99,7 @@
 
 <br/>
 
-<img src="https://github.com/HARIPRASATH2611/Hariprasath2611/blob/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%"/>
+<img src="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%"/>
 
 
 <h3>💬 Random Dev Quote</h3>
