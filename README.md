@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- HEADER SECTION -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=006450&height=200&section=header&text=HARIPRASATH&fontSize=70&animation=fadeIn&fontAlignY=38" width="100%"/>
+<img src="assets/header_banner.png" width="100%"/>
 
 <table width="100%">
   <tr>
