@@ -76,6 +76,9 @@
 
 <!-- FIXED GITHUB STATS SECTION -->
 <h3>📊 Github Stats</h3>
+<div align="center">
+<img src="https://komarev.com/ghpvc/?username=HARIPRASATH2611&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
+</div>
 <img src="https://github-readme-stats-one.vercel.app/api?username=HARIPRASATH2611&show_icons=true&theme=tokyonight&border_radius=10&cache_seconds=1800" alt="GitHub Stats" />
 
 <br/>
@@ -94,6 +97,13 @@
 <h3>📈 Contribution Graph</h3>
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=HARIPRASATH2611&theme=tokyo-night&area=true&hide_border=true" width="100%" alt="Contribution Graph" />
 
+<br/>
+
+<img src="https://github.com/HARIPRASATH2611/Hariprasath2611/blob/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%"/>
+
+
+<h3>💬 Random Dev Quote</h3>
+<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Dev Quote" />
 
 <h3>Thanks for visiting my page</h3>
 <img src="https://capsule-render.vercel.app/api?type=waving&color=006450&height=100&section=footer&fontSize=70&animation=fadeIn&fontAlignY=38" width="100%"/>
