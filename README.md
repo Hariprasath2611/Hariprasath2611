@@ -29,8 +29,8 @@
 
 <!-- TECH STACK SECTION -->
 <!-- GITHUB TROPHIES -->
-<h3>🏆 Trophies</h3>
-<img src="https://github-profile-trophy.vercel.app/?username=HARIPRASATH2611&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" width="100%" alt="Trophies" />
+<!-- <h3>🏆 Trophies</h3>
+<img src="https://github-profile-trophy.vercel.app/?username=HARIPRASATH2611&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" width="100%" alt="Trophies" /> -->
 
 <br/>
 
