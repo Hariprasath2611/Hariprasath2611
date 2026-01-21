@@ -52,4 +52,4 @@ jobs:
           cp dist/* .
           git add .
           git commit -m "Update Snake"
-          git push origin output --force
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} output --force
