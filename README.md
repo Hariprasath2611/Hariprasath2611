@@ -88,8 +88,8 @@
 
 <br/>
 
-<h3>🔥 Streak Stats</h3>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=HARIPRASATH2611&theme=tokyonight&border_radius=10" alt="Streak Stats" />
+<!-- <h3>🔥 Streak Stats</h3>
+<img src="https://github-readme-streak-stats.herokuapp.com/?user=HARIPRASATH2611&theme=tokyonight&border_radius=10" alt="Streak Stats" /> -->
 
 <br/>
 
