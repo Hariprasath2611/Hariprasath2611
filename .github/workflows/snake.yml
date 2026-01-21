@@ -43,13 +43,10 @@ jobs:
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark
             
       # push the content of <build_dir> to a branch
-      - name: Push to output branch
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git checkout --orphan output
-          git rm -rf .
-          cp dist/* .
-          git add .
-          git commit -m "Update Snake"
-          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} output --force
+      - name: Deploy to output branch
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: output
+          force_orphan: true
