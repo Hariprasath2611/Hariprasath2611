@@ -7,7 +7,7 @@
   <tr>
     <td align="center" width="33%">🚀 <b>UI/UX DESIGNER</b></td>
     <td align="center" width="33%">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://my-site-i6n5lyil-hp5173690.wix-vibe.com/" width="100px"/>
+      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://hariprasathportfolio-zeta.vercel.app/" width="100px"/>
     </td>
     <td align="center" width="33%">🌐 <b>WEB DEVELOPER</b></td>
   </tr>
