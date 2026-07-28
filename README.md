@@ -12,7 +12,7 @@
     <td align="center" width="33%">🌐 <b>WEB DEVELOPER</b></td>
   </tr>
   <tr>
-    <td align="center" colspan="3">🧊 <b>3D DESIGNER</b></td>
+    <td align="center" colspan="3">📱 <b>APP DEVELOPER</b></td>
   </tr>
 </table>
 
@@ -21,7 +21,7 @@
 <!-- TYPING ANIMATION -->
 <h1>
   <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=53D1B0&center=true&vCenter=true&width=500&lines=A+passionate+Developer+%26+Designer;UI%2FUX+Designer;App+Developer;3D+Designer;Tech+Enthusiast" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=53D1B0&center=true&vCenter=true&width=500&lines=A+passionate+Developer+%26+Designer;UI%2FUX+Designer;App+Developer;Mobile+Developer;Tech+Enthusiast" alt="Typing SVG" />
   </a>
 </h1>
 
@@ -43,7 +43,7 @@
   <tr>
     <th>🌐 Web</th>
     <th>📱 App</th>
-    <th>🎨 Design & 3D</th>
+    <th>🎨UI/UX Design</th>
     <th>💻 Languages</th>
   </tr>
   <tr>
