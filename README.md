@@ -1,7 +1,7 @@
 <div align="center">
 
 <!-- HEADER SECTION -->
-<h1 align="center">Hi, I'm Hariprasath 👋</h1>
+<h1 align="center">Hi, I'm Hariprasath</h1>
 
 <table width="100%">
   <tr>
