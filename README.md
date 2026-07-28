@@ -93,11 +93,6 @@
 
 <br/>
 
-<!-- ACTIVITY GRAPH (Using a different stable provider) -->
-<h3>📈 Contribution Graph</h3>
-<img src="https://github-readme-activity-graph.vercel.app/graph?username=HARIPRASATH2611&theme=tokyo-night&area=true&hide_border=true" width="100%" alt="Contribution Graph" />
-
-<br/>
 
 <img src="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%"/>
 
