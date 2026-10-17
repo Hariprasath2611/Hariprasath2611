@@ -1,34 +1,34 @@
 <div align="center">
 
-  <!-- TOP BAR & HERO SECTION -->
-  <img src="assets/01-hero.png" width="100%" alt="PLAYER 01 - @HARIPRASATH2611 | Hariprasath - Full stack developer. I build web and mobile apps end to end, from the database to the screen. Clean APIs, fast interfaces, and data models that hold up. Open to new projects." />
+  <!-- 1. TOP BAR & HERO SECTION -->
+  <img src="assets/01-hero.svg" width="100%" alt="PLAYER 01 - @HARIPRASATH2611 | Hariprasath - Full stack developer. I build web and mobile apps end to end, from the database to the screen. Clean APIs, fast interfaces, and data models that hold up. Open to new projects." />
 
-  <!-- MAIN QUEST CARD -->
-  <img src="assets/02-main-quest.png" width="100%" alt="MAIN QUEST: Learning vector databases, and how semantic search is built on top of them." />
+  <!-- 2. MAIN QUEST CARD -->
+  <img src="assets/02-main-quest.svg" width="100%" alt="MAIN QUEST: Learning vector databases, and how semantic search is built on top of them." />
 
-  <!-- INVENTORY (TECH STACK) CARD -->
-  <img src="assets/03-inventory.png" width="100%" alt="Inventory: FRONTEND (HTML, CSS, JavaScript, React), MOBILE (React Native, Flutter), BACKEND (Node.js, Express.js), DATABASE (MongoDB, PostgreSQL, Vector DBs)" />
+  <!-- 3. INVENTORY (TECH STACK) CARD -->
+  <img src="assets/03-inventory.svg" width="100%" alt="Inventory: FRONTEND (HTML, CSS, JavaScript, React), MOBILE (React Native, Flutter), BACKEND (Node.js, Express.js), DATABASE (MongoDB, PostgreSQL, Vector DBs)" />
 
-  <!-- COMMIT LOG CARD -->
-  <img src="assets/04-commit-log.png" width="100%" alt="Commit log: git log --oneline. feat: on-demand driver booking app (Customers book a professional driver for their own vehicle. React Native and Node.), feat: campus ERP attendance module (Faculty attendance on mobile, built with React Native and Expo.), feat: SIH 2026 identity platform (Blockchain identity, access control and digital assets.)" />
+  <!-- 4. COMMIT LOG CARD -->
+  <img src="assets/04-commit-log.svg" width="100%" alt="Commit log: git log --oneline. feat: on-demand driver booking app (Customers book a professional driver for their own vehicle. React Native and Node.), feat: campus ERP attendance module (Faculty attendance on mobile, built with React Native and Expo.), feat: SIH 2026 identity platform (Blockchain identity, access control and digital assets.)" />
 
-  <!-- LIVE CONTRIBUTION ACTIVITY GRAPH -->
+  <!-- 5. REAL CONTRIBUTION SNAKE ANIMATION -->
   <a href="https://github.com/HARIPRASATH2611">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake-dark.svg" />
       <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake.svg" />
-      <img src="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Hariprasath's Live GitHub Contribution Activity Graph" />
+      <img src="assets/fallback-snake.svg" width="100%" alt="Hariprasath's Real Contribution Activity Snake" />
     </picture>
   </a>
 
-  <!-- FOOTER & CONNECT CARD -->
+  <!-- 6. FOOTER & CONNECT CARD -->
   <a href="https://hariprasathportfolio-zeta.vercel.app/">
-    <img src="assets/05-footer.png" width="100%" alt="Join my party — Portfolio: hariprasathportfolio-zeta.vercel.app | Email: hariprasathd26112006@gmail.com" />
+    <img src="assets/05-footer.svg" width="100%" alt="Join my party — Portfolio: hariprasathportfolio-zeta.vercel.app | Email: hariprasathd26112006@gmail.com" />
   </a>
 
   <br/>
 
-  <!-- ACCESSIBLE TEXT & DIRECT REPO LINKS -->
+  <!-- ACCESSIBLE LINKS ROW -->
   <p align="center">
     <a href="https://hariprasathportfolio-zeta.vercel.app/">🌐 <b>Portfolio Website</b></a>
     &nbsp;&nbsp;&bull;&nbsp;&nbsp;

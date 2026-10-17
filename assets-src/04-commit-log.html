@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      width: 900px;
+      background-color: #1B1030;
+      padding: 12px 48px;
+      overflow: hidden;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .commit-card {
+      background-color: #2A1A4A;
+      border-radius: 24px;
+      padding: 36px 40px 40px 40px;
+    }
+    .commit-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 24px;
+    }
+    .commit-title {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 32px;
+      line-height: 1;
+      color: #F6F1FF;
+    }
+    .commit-command {
+      font-family: 'Space Mono', monospace;
+      font-size: 13.5px;
+      font-weight: 400;
+      color: #B79CFF;
+      letter-spacing: 0.5px;
+    }
+    .graph-container {
+      border: 1.5px dashed #4A3578;
+      border-radius: 16px;
+      padding: 28px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 36px;
+      background: rgba(27, 16, 48, 0.3);
+    }
+    .graph-placeholder {
+      font-family: 'Space Mono', monospace;
+      font-size: 13.5px;
+      color: #CFC4EA;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+    .timeline {
+      position: relative;
+      padding-left: 28px;
+    }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 14px;
+      bottom: 24px;
+      left: 4.5px;
+      width: 1.5px;
+      background-color: #4A3578;
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 28px;
+    }
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+    .timeline-dot {
+      position: absolute;
+      left: -28px;
+      top: 5px;
+      width: 10.5px;
+      height: 10.5px;
+      border-radius: 50%;
+      background-color: #FF8A3D;
+      box-shadow: 0 0 8px rgba(255, 138, 61, 0.6);
+      z-index: 2;
+    }
+    .timeline-heading {
+      font-family: 'Space Mono', monospace;
+      font-weight: 700;
+      font-size: 15px;
+      line-height: 1.4;
+      color: #F6F1FF;
+      margin-bottom: 6px;
+    }
+    .timeline-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 14.5px;
+      line-height: 1.5;
+      color: #CFC4EA;
+    }
+  </style>
+</head>
+<body>
+  <div class="commit-card">
+    <div class="commit-header">
+      <h2 class="commit-title">Commit log</h2>
+      <span class="commit-command">git log --oneline</span>
+    </div>
+
+    <div class="graph-container">
+      <div class="graph-placeholder">
+        Contribution graph: filled live from @HARIPRASATH2611
+      </div>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <h4 class="timeline-heading">feat: on-demand driver booking app</h4>
+        <p class="timeline-desc">Customers book a professional driver for their own vehicle. React Native and Node.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <h4 class="timeline-heading">feat: campus ERP attendance module</h4>
+        <p class="timeline-desc">Faculty attendance on mobile, built with React Native and Expo.</p>
+      </div>
+
+      <div class="timeline-item">
+        <span class="timeline-dot"></span>
+        <h4 class="timeline-heading">feat: SIH 2026 identity platform</h4>
+        <p class="timeline-desc">Blockchain identity, access control and digital assets.</p>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
