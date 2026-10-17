@@ -1,110 +1,52 @@
 <div align="center">
 
-<!-- HEADER SECTION -->
-<h1 align="center">Hi, I'm Hariprasath</h1>
+  <!-- TOP BAR & HERO SECTION -->
+  <img src="assets/01-hero.png" width="100%" alt="PLAYER 01 - @HARIPRASATH2611 | Hariprasath - Full stack developer. I build web and mobile apps end to end, from the database to the screen. Clean APIs, fast interfaces, and data models that hold up. Open to new projects." />
 
-<table width="100%">
-  <tr>
-    <td align="center" width="33%">🚀 <b>UI/UX DESIGNER</b></td>
-    <td align="center" width="33%">
-      <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data=https://hariprasathportfolio-zeta.vercel.app/" width="100px"/>
-    </td>
-    <td align="center" width="33%">🌐 <b>WEB DEVELOPER</b></td>
-  </tr>
-  <tr>
-    <td align="center" colspan="3">📱 <b>APP DEVELOPER</b></td>
-  </tr>
-</table>
+  <!-- MAIN QUEST CARD -->
+  <img src="assets/02-main-quest.png" width="100%" alt="MAIN QUEST: Learning vector databases, and how semantic search is built on top of them." />
 
-<br/>
+  <!-- INVENTORY (TECH STACK) CARD -->
+  <img src="assets/03-inventory.png" width="100%" alt="Inventory: FRONTEND (HTML, CSS, JavaScript, React), MOBILE (React Native, Flutter), BACKEND (Node.js, Express.js), DATABASE (MongoDB, PostgreSQL, Vector DBs)" />
 
-<!-- TYPING ANIMATION -->
-<h1>
-  <a href="https://git.io/typing-svg">
-    <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=53D1B0&center=true&vCenter=true&width=500&lines=A+passionate+Developer+%26+Designer;UI%2FUX+Designer;App+Developer;Mobile+Developer;Tech+Enthusiast" alt="Typing SVG" />
+  <!-- COMMIT LOG CARD -->
+  <img src="assets/04-commit-log.png" width="100%" alt="Commit log: git log --oneline. feat: on-demand driver booking app (Customers book a professional driver for their own vehicle. React Native and Node.), feat: campus ERP attendance module (Faculty attendance on mobile, built with React Native and Expo.), feat: SIH 2026 identity platform (Blockchain identity, access control and digital assets.)" />
+
+  <!-- LIVE CONTRIBUTION ACTIVITY GRAPH -->
+  <a href="https://github.com/HARIPRASATH2611">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake-dark.svg" />
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake.svg" />
+      <img src="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake-dark.svg" width="100%" alt="Hariprasath's Live GitHub Contribution Activity Graph" />
+    </picture>
   </a>
-</h1>
 
-<hr/>
+  <!-- FOOTER & CONNECT CARD -->
+  <a href="https://hariprasathportfolio-zeta.vercel.app/">
+    <img src="assets/05-footer.png" width="100%" alt="Join my party — Portfolio: hariprasathportfolio-zeta.vercel.app | Email: hariprasathd26112006@gmail.com" />
+  </a>
 
-<!-- TECH STACK SECTION -->
-<!-- GITHUB TROPHIES -->
-<!-- <h3>🏆 Trophies</h3>
-<img src="https://github-profile-trophy.vercel.app/?username=HARIPRASATH2611&theme=tokyonight&no-frame=true&no-bg=true&margin-w=4" width="100%" alt="Trophies" /> -->
+  <br/>
 
-<br/>
+  <!-- ACCESSIBLE TEXT & DIRECT REPO LINKS -->
+  <p align="center">
+    <a href="https://hariprasathportfolio-zeta.vercel.app/">🌐 <b>Portfolio Website</b></a>
+    &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+    <a href="mailto:hariprasathd26112006@gmail.com">✉️ <b>Email Me</b></a>
+    &nbsp;&nbsp;&bull;&nbsp;&nbsp;
+    <a href="https://github.com/HARIPRASATH2611?tab=repositories">📦 <b>All Projects</b></a>
+  </p>
 
-<hr/>
-
-<!-- TECH STACK SECTION -->
-<h3>My Tech Stack</h3>
-
-<table>
-  <tr>
-    <th>🌐 Web</th>
-    <th>📱 App</th>
-    <th>🎨UI/UX Design</th>
-    <th>💻 Languages</th>
-  </tr>
-  <tr>
-    <td>
-      <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/><br/>
-      <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/><br/>
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/><br/>
-      <img src="https://img.shields.io/badge/Bootstrap-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white"/><br/>
-      <img src="https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white"/>
-    </td>
-    <td>
-      <img src="https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white"/><br/>
-      <img src="https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white"/>
-    </td>
-    <td>
-      <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white"/><br/>
-      <img src="https://img.shields.io/badge/Canva-00C4CC?style=for-the-badge&logo=canva&logoColor=white"/><br/>
-      <img src="https://img.shields.io/badge/Blender-E87D0D?style=for-the-badge&logo=blender&logoColor=white"/><br/>
-      <img src="https://img.shields.io/badge/Unreal%20Engine-313131?style=for-the-badge&logo=unreal-engine&logoColor=white"/>
-    </td>
-    <td>
-      <img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=java&logoColor=white"/><br/>
-      <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/><br/>
-      <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>
-    </td>
-  </tr>
-</table>
-
-<br/>
-
-<!-- FIXED GITHUB STATS SECTION -->
-<h3>📊 Github Stats</h3>
-<div align="center">
-<img src="https://komarev.com/ghpvc/?username=HARIPRASATH2611&label=Profile%20Views&color=0e75b6&style=flat" alt="Profile Views" />
-</div>
-<img src="https://github-readme-stats-one.vercel.app/api?username=HARIPRASATH2611&show_icons=true&theme=tokyonight&border_radius=10&cache_seconds=1800" alt="GitHub Stats" />
-
-<br/>
-
-<h3>🛠️ Languages Used</h3>
-<img src="https://github-readme-stats-one.vercel.app/api/top-langs/?username=HARIPRASATH2611&layout=compact&theme=tokyonight&border_radius=10&cache_seconds=1800" alt="Top Languages" />
-
-<br/>
-
-<!-- <h3>🔥 Streak Stats</h3>
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=HARIPRASATH2611&theme=tokyonight&border_radius=10" alt="Streak Stats" /> -->
-
-<br/>
-
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake-dark.svg" />
-  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake.svg" />
-  <img src="https://raw.githubusercontent.com/HARIPRASATH2611/Hariprasath2611/output/github-contribution-grid-snake.svg" alt="Snake Animation" width="100%" />
-</picture>
-
-
-<h3>💬 Random Dev Quote</h3>
-<img src="https://quotes-github-readme.vercel.app/api?type=horizontal&theme=tokyonight" alt="Dev Quote" />
-
-<h3>Thanks for visiting my page</h3>
-<img src="https://capsule-render.vercel.app/api?type=waving&color=006450&height=100&section=footer&fontSize=70&animation=fadeIn&fontAlignY=38" width="100%"/>
+  <details>
+    <summary><b>🔍 Quick Links to Featured Repositories</b></summary>
+    <br/>
+    <div align="left">
+      <ul>
+        <li>🚘 <a href="https://github.com/Hariprasath2611/Ryde"><b>Ryde</b></a> — On-demand driver booking app (Customers book a professional driver for their own vehicle. React Native and Node).</li>
+        <li>🎓 <a href="https://github.com/Hariprasath2611/CCR-App"><b>CCR-App</b></a> — Campus ERP attendance module (Faculty attendance on mobile, built with React Native and Expo).</li>
+        <li>🔐 <a href="https://github.com/Hariprasath2611/SIH26125-LuminaryForge"><b>SIH26125-LuminaryForge</b></a> — SIH 2026 identity platform (Blockchain identity, access control and digital assets).</li>
+      </ul>
+    </div>
+  </details>
 
 </div>
