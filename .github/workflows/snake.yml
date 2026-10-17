@@ -43,7 +43,7 @@ jobs:
           #                 Exactly 5 colors are expected.
           outputs: |
             dist/github-contribution-grid-snake.svg?palette=github
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/github-contribution-grid-snake-dark.svg?color_snake=%23FF8A3D&color_dots=%231B1030,%233B226B,%236742A9,%23B79CFF,%23FF8A3D
             
       # push the content of <build_dir> to a branch
       - name: Deploy to output branch
