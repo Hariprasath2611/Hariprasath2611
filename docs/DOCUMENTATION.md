@@ -85,13 +85,19 @@ GitHub's Markdown renderer strips `<style>`, `<script>`, custom external web fon
 ### Rebuilding the Profile Asset
 ```bash
 # Regenerates assets/profile-animated.svg and assets-src/profile-animated.svg
-python build_full_svg.py
+python scripts/build_full_svg.py
 ```
 
 ### Rendering a Local Verification Screenshot
 ```bash
-# Uses Puppeteer to render a high-res screenshot
-node render_full_svg.js
+# Uses Puppeteer to render a high-res screenshot to assets/profile-animated-render.png
+node scripts/render_full_svg.js
+```
+
+### Regenerating Documentation Word Document
+```bash
+# Rebuilds docs/DOCUMENTATION.docx
+python scripts/create_docs.py
 ```
 
 ### Accessibility & Reduced Motion
