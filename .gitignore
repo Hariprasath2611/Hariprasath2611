@@ -1,2 +1,14 @@
+# Dependencies
 node_modules/
+**/node_modules/
 package-lock.json
+**/package-lock.json
+
+# Python cache
+__pycache__/
+**/__pycache__/
+*.pyc
+
+# OS metadata
+.DS_Store
+Thumbs.db
