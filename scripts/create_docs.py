@@ -246,8 +246,11 @@ def create_docx():
         "disabling transforms, keyframes, and filter animations for users with vestibular or motion sensitivities."
     )
 
-    doc.save("DOCUMENTATION.docx")
-    print("Successfully saved DOCUMENTATION.docx")
+    SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+    ROOT_DIR = os.path.dirname(SCRIPT_DIR)
+    docx_path = os.path.join(ROOT_DIR, "docs", "DOCUMENTATION.docx")
+    doc.save(docx_path)
+    print(f"Successfully saved {docx_path}")
 
 if __name__ == '__main__':
     create_docx()
