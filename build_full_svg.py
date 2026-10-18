@@ -22,16 +22,16 @@ if os.path.exists('embedded_fonts.css'):
     with open('embedded_fonts.css', 'r', encoding='utf-8') as f:
         font_css = f.read()
 
-# 3. Fetch real contribution data for HARIPRASATH2611
+# 3. Load real contribution data for HARIPRASATH2611
 try:
-    req = urllib.request.Request('https://github-contributions-api.jogruber.de/v4/HARIPRASATH2611', headers={'User-Agent': 'Mozilla/5.0'})
-    data = json.loads(urllib.request.urlopen(req, timeout=10).read().decode('utf-8'))
+    with open('assets/contributions.json', 'r', encoding='utf-8') as f:
+        data = json.load(f)
     contributions = data.get('contributions', [])
     recent_days = contributions[-371:]
     while len(recent_days) < 371:
         recent_days.insert(0, {'count': 0, 'level': 0})
 except Exception as e:
-    print('Warning: could not fetch contributions API:', e)
+    print('Warning: loading contributions:', e)
     recent_days = [{'count': 0, 'level': 0} for _ in range(371)]
 
 colors = ['#34225A', '#6E4FB5', '#B79CFF', '#FFB27A', '#FF8A3D']
