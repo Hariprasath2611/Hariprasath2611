@@ -1,44 +1,57 @@
 import base64
 import json
 import urllib.request
+import io
+from PIL import Image
 
-# Load cropped profile photo base64
-with open('assets/profile_crop.b64', 'r', encoding='utf-8') as f:
-    photo_b64 = f.read().strip()
+# 1. Process profile photo directly from assets/profile.png
+im = Image.open('assets/profile.png')
+w, h = im.size
+crop_w = int(h * 0.878)
+left = int(w * 0.48 - crop_w * 0.48)
+crop = im.crop((left, 0, left + crop_w, h))
+crop_resized = crop.resize((448, 510), Image.Resampling.LANCZOS)
+buf = io.BytesIO()
+crop_resized.save(buf, format='JPEG', quality=90, optimize=True)
+photo_b64 = base64.b64encode(buf.getvalue()).decode('utf-8')
 
-# Fetch real contribution data for HARIPRASATH2611
-req = urllib.request.Request('https://github-contributions-api.jogruber.de/v4/HARIPRASATH2611', headers={'User-Agent': 'Mozilla/5.0'})
-data = json.loads(urllib.request.urlopen(req, timeout=10).read().decode('utf-8'))
-contributions = data.get('contributions', [])
-recent_days = contributions[-371:]
-while len(recent_days) < 371:
-    recent_days.insert(0, {'count': 0, 'level': 0})
+# 2. Fetch real contribution data for HARIPRASATH2611
+try:
+    req = urllib.request.Request('https://github-contributions-api.jogruber.de/v4/HARIPRASATH2611', headers={'User-Agent': 'Mozilla/5.0'})
+    data = json.loads(urllib.request.urlopen(req, timeout=10).read().decode('utf-8'))
+    contributions = data.get('contributions', [])
+    recent_days = contributions[-371:]
+    while len(recent_days) < 371:
+        recent_days.insert(0, {'count': 0, 'level': 0})
+except Exception as e:
+    print('Warning: could not fetch contributions API:', e)
+    recent_days = [{'count': 0, 'level': 0} for _ in range(371)]
 
 colors = ['#34225A', '#6E4FB5', '#B79CFF', '#FFB27A', '#FF8A3D']
 
-# Generate snake inside commit log dashed container
-# Dashed box: x=84, y=1000, width=732, height=110
-# 53 cols x 7 rows
+# 3. Generate snake path and cells inside Commit Log dashed container
+# Container width: 732, height: 118
 cols = 53
 rows = 7
 cell_size = 9
 gap = 3
-grid_x0 = 84 + (732 - (cols * cell_size + (cols - 1) * gap)) / 2 # center horizontally
-grid_y0 = 1000 + 16
+
+local_x0 = (732 - (cols * cell_size + (cols - 1) * gap)) / 2  # 49.5
+local_y0 = (118 - (rows * cell_size + (rows - 1) * gap)) / 2  # 18.5
 
 snake_cells = []
 snake_points = []
 cell_idx = 0
 
 for c in range(cols):
-    col_cx = grid_x0 + c * (cell_size + gap) + cell_size / 2
+    col_cx = local_x0 + c * (cell_size + gap) + cell_size / 2
     if c % 2 == 0:
         row_range = range(rows)
     else:
         row_range = range(rows - 1, -1, -1)
     
     for r in row_range:
-        snake_points.append((col_cx, grid_y0 + r * (cell_size + gap) + cell_size / 2))
+        snake_points.append((col_cx, local_y0 + r * (cell_size + gap) + cell_size / 2))
 
 for col in range(cols):
     for row in range(rows):
@@ -47,8 +60,8 @@ for col in range(cols):
         else:
             level = 0
         fill = colors[level]
-        x = grid_x0 + col * (cell_size + gap)
-        y = grid_y0 + row * (cell_size + gap)
+        x = local_x0 + col * (cell_size + gap)
+        y = local_y0 + row * (cell_size + gap)
         
         step = col * 7 + (row if col % 2 == 0 else (6 - row))
         delay = (step / 371.0) * 22.0
@@ -57,11 +70,11 @@ for col in range(cols):
 
 path_d = f"M {snake_points[0][0]:.1f},{snake_points[0][1]:.1f} " + " ".join([f"L {p[0]:.1f},{p[1]:.1f}" for p in snake_points[1:]])
 
-# Build complete profile-animated.svg
-full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 1540" width="100%" height="100%">
+# 4. Assemble the Unified SVG
+full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 1530" width="100%" height="100%">
 <defs>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&amp;family=Space+Mono:wght@400;700&amp;family=Syne:wght@700;800&amp;display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;family=Syne:wght@700;800&amp;display=swap');
 
     * {{ box-sizing: border-box; }}
     
@@ -161,8 +174,8 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
     }}
   </style>
 
-  <clipPath id="photoClip">
-    <rect x="0" y="0" width="224" height="255" rx="28" ry="28" />
+  <clipPath id="photoCardClip">
+    <rect x="0" y="0" width="224" height="328" rx="28" ry="28" />
   </clipPath>
 
   <clipPath id="darkPillClip">
@@ -197,7 +210,7 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 </defs>
 
 <!-- Overall Canvas Background -->
-<rect width="900" height="1540" class="bg" />
+<rect width="900" height="1530" class="bg" />
 
 <!-- ========================================== -->
 <!-- 1. TOP BAR & HERO SECTION -->
@@ -210,8 +223,9 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 <g transform="translate(48, 80)">
   <!-- Floating Photo Card -->
   <g class="floating-card">
+    <animateTransform attributeName="transform" type="translate" values="0,0; 0,-7; 0,0" dur="5s" repeatCount="indefinite" />
     <rect x="0" y="0" width="224" height="328" rx="28" ry="28" fill="#FF8A3D" />
-    <g clip-path="url(#photoClip)">
+    <g clip-path="url(#photoCardClip)">
       <image href="data:image/jpeg;base64,{photo_b64}" x="0" y="0" width="224" height="255" preserveAspectRatio="xMidYMid slice" />
     </g>
     <text x="18" y="286" fill="#1B1030" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="21" letter-spacing="-0.3">Full stack</text>
@@ -227,7 +241,10 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
       <text x="0" y="154">interfaces, and data models that hold up.</text>
     </g>
     <g transform="translate(0, 214)">
-      <circle cx="5" cy="-4" r="5" fill="#FF8A3D" class="status-dot" />
+      <circle cx="5" cy="-4" r="5" fill="#FF8A3D" class="status-dot">
+        <animate attributeName="opacity" values="1;0.35;1" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="r" values="5;5.8;5" dur="2s" repeatCount="indefinite" />
+      </circle>
       <text x="22" y="0" fill="#F6F1FF" font-family="'Space Mono', monospace" font-size="13.5" font-weight="400">Open to new projects</text>
     </g>
   </g>
@@ -242,7 +259,7 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
     <rect x="0" y="0" width="168" height="42" rx="12" ry="12" fill="#B79CFF" />
     <text x="84" y="27" text-anchor="middle" fill="#1B1030" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="17" letter-spacing="0.3">MAIN QUEST</text>
   </g>
-  <text x="216" y="45" fill="#F6F1FF" font-family="'DM Sans', system-ui, sans-serif" font-weight="500" font-size="15.2">Learning vector databases, and how semantic search is built on top of them.</text>
+  <text x="216" y="44" fill="#F6F1FF" font-family="'DM Sans', system-ui, sans-serif" font-weight="500" font-size="15.2">Learning vector databases, and how semantic search is built on top of them.</text>
 </g>
 
 <!-- ========================================== -->
@@ -313,7 +330,9 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
   <text x="36" y="52" fill="url(#commitGrad)" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="32">Commit log</text>
   <g transform="translate(768, 50)">
     <text x="0" y="0" text-anchor="end" fill="#B79CFF" font-family="'Space Mono', monospace" font-size="13.5" font-weight="400" letter-spacing="0.5">git log --oneline</text>
-    <rect x="3" y="-12" width="7" height="15" fill="#FF8A3D" class="cursor" />
+    <rect x="3" y="-12" width="7" height="15" fill="#FF8A3D" class="cursor">
+      <animate attributeName="opacity" values="1;1;0;0;1" keyTimes="0;0.49;0.5;0.99;1" dur="1s" repeatCount="indefinite" />
+    </rect>
   </g>
 
   <!-- Dashed Graph Container with Live Contribution Snake -->
@@ -321,12 +340,12 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
     <rect x="0" y="0" width="732" height="118" rx="16" ry="16" fill="#1B1030" stroke="#4A3578" stroke-width="1.5" stroke-dasharray="6 6" />
     
     <!-- Real Grid Cells -->
-    <g transform="translate(-48, -988)">
+    <g>
       {''.join(snake_cells)}
     </g>
     
-    <!-- Real Zigzag Snake -->
-    <g transform="translate(-48, -988)">
+    <!-- Real Zigzag Snake traversing actual contribution coordinates -->
+    <g>
       <rect x="-4" y="-4" width="8" height="8" rx="2" ry="2" fill="#6E4FB5" opacity="0.6">
         <animateMotion dur="22s" repeatCount="indefinite" rotate="auto" begin="-0.35s"><mpath href="#snakePath" /></animateMotion>
       </rect>
@@ -354,7 +373,10 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 
     <!-- Commit 1 -->
     <g transform="translate(0, 0)">
-      <circle cx="5.5" cy="5.5" r="5.5" fill="none" class="ring-pulse" />
+      <circle cx="5.5" cy="5.5" r="5.5" fill="none" class="ring-pulse">
+        <animate attributeName="r" values="5.5;14" dur="2.5s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.9;0" dur="2.5s" repeatCount="indefinite" />
+      </circle>
       <circle cx="5.5" cy="5.5" r="5.5" fill="#FF8A3D" />
       <text x="28" y="9" fill="#F6F1FF" font-family="'Space Mono', monospace" font-size="15" font-weight="700">feat: on-demand driver booking app</text>
       <text x="28" y="32" fill="#CFC4EA" font-family="'DM Sans', system-ui, sans-serif" font-size="14.5" font-weight="400">Customers book a professional driver for their own vehicle. React Native and Node.</text>
@@ -362,7 +384,10 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 
     <!-- Commit 2 -->
     <g transform="translate(0, 80)">
-      <circle cx="5.5" cy="5.5" r="5.5" fill="none" class="ring-pulse p2" />
+      <circle cx="5.5" cy="5.5" r="5.5" fill="none" class="ring-pulse p2">
+        <animate attributeName="r" values="5.5;14" dur="2.5s" begin="0.8s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.9;0" dur="2.5s" begin="0.8s" repeatCount="indefinite" />
+      </circle>
       <circle cx="5.5" cy="5.5" r="5.5" fill="#FF8A3D" />
       <text x="28" y="9" fill="#F6F1FF" font-family="'Space Mono', monospace" font-size="15" font-weight="700">feat: campus ERP attendance module</text>
       <text x="28" y="32" fill="#CFC4EA" font-family="'DM Sans', system-ui, sans-serif" font-size="14.5" font-weight="400">Faculty attendance on mobile, built with React Native and Expo.</text>
@@ -370,7 +395,10 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 
     <!-- Commit 3 -->
     <g transform="translate(0, 160)">
-      <circle cx="5.5" cy="5.5" r="5.5" fill="none" class="ring-pulse p3" />
+      <circle cx="5.5" cy="5.5" r="5.5" fill="none" class="ring-pulse p3">
+        <animate attributeName="r" values="5.5;14" dur="2.5s" begin="1.6s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.9;0" dur="2.5s" begin="1.6s" repeatCount="indefinite" />
+      </circle>
       <circle cx="5.5" cy="5.5" r="5.5" fill="#FF8A3D" />
       <text x="28" y="9" fill="#F6F1FF" font-family="'Space Mono', monospace" font-size="15" font-weight="700">feat: SIH 2026 identity platform</text>
       <text x="28" y="32" fill="#CFC4EA" font-family="'DM Sans', system-ui, sans-serif" font-size="14.5" font-weight="400">Blockchain identity, access control and digital assets.</text>
@@ -390,15 +418,17 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
     <g transform="translate(0, 0)">
       <rect x="0" y="0" width="298" height="38" rx="19" ry="19" fill="#1B1030" />
       <g clip-path="url(#darkPillClip)">
-        <rect x="0" y="-10" width="50" height="60" fill="url(#shineGrad)" class="shine-rect" />
+        <rect x="0" y="-10" width="50" height="60" fill="url(#shineGrad)" class="shine-rect">
+          <animateTransform attributeName="transform" type="translate" values="-160 0; 360 0" dur="4.5s" repeatCount="indefinite" />
+        </rect>
       </g>
       <text x="149" y="24" text-anchor="middle" fill="#F6F1FF" font-family="'Space Mono', monospace" font-size="11" font-weight="700" letter-spacing="-0.2">hariprasathportfolio-zeta.vercel.app</text>
     </g>
 
     <!-- Outlined Email Pill -->
     <g transform="translate(308, 0)">
-      <rect x="0" y="0" width="218" height="38" rx="19" ry="19" fill="none" stroke="#1B1030" stroke-width="1.2" />
-      <text x="109" y="24" text-anchor="middle" fill="#1B1030" font-family="'Space Mono', monospace" font-size="10.5" font-weight="700" letter-spacing="-0.3">[hariprasathd26112006@gmail.com]</text>
+      <rect x="0" y="0" width="220" height="38" rx="19" ry="19" fill="none" stroke="#1B1030" stroke-width="1.2" />
+      <text x="110" y="24" text-anchor="middle" fill="#1B1030" font-family="'Space Mono', monospace" font-size="10" font-weight="700" letter-spacing="-0.2">hariprasathd26112006@gmail.com</text>
     </g>
   </g>
 </g>
@@ -409,4 +439,4 @@ with open('assets/profile-animated.svg', 'w', encoding='utf-8') as f:
     f.write(full_svg)
 with open('assets-src/profile-animated.svg', 'w', encoding='utf-8') as f:
     f.write(full_svg)
-print('Saved assets/profile-animated.svg (Height: 1540px)')
+print('Successfully generated assets/profile-animated.svg (Height: 1530px)')
