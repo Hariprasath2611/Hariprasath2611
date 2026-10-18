@@ -3,6 +3,7 @@ import json
 import urllib.request
 import io
 import os
+from datetime import datetime, timedelta
 from PIL import Image
 
 # 1. Process profile photo directly from assets/profile.png
@@ -23,16 +24,27 @@ if os.path.exists('embedded_fonts.css'):
         font_css = f.read()
 
 # 3. Load real contribution data for HARIPRASATH2611
-try:
-    with open('assets/contributions.json', 'r', encoding='utf-8') as f:
-        data = json.load(f)
-    contributions = data.get('contributions', [])
-    recent_days = contributions[-371:]
-    while len(recent_days) < 371:
-        recent_days.insert(0, {'count': 0, 'level': 0})
-except Exception as e:
-    print('Warning: loading contributions:', e)
-    recent_days = [{'count': 0, 'level': 0} for _ in range(371)]
+# Today is 2026-10-18 (Sunday)
+with open('assets/contributions.json', 'r', encoding='utf-8') as f:
+    contrib_json = json.load(f)
+
+date_map = {c['date']: c for c in contrib_json.get('contributions', [])}
+
+# GitHub 53-week calendar ending on today (2026-10-18)
+start_sunday = datetime(2026, 10, 18) - timedelta(days=52*7)
+end_day = datetime(2026, 10, 18)
+
+grid_cells_data = []
+for col in range(53):
+    col_sunday = start_sunday + timedelta(days=col*7)
+    for row in range(7):
+        curr_day = col_sunday + timedelta(days=row)
+        d_str = curr_day.strftime('%Y-%m-%d')
+        if curr_day <= end_day:
+            c_info = date_map.get(d_str, {'date': d_str, 'count': 0, 'level': 0})
+        else:
+            c_info = {'date': d_str, 'count': 0, 'level': 0}
+        grid_cells_data.append(c_info)
 
 colors = ['#34225A', '#6E4FB5', '#B79CFF', '#FFB27A', '#FF8A3D']
 
@@ -48,8 +60,8 @@ local_y0 = (118 - (rows * cell_size + (rows - 1) * gap)) / 2  # 18.5
 
 snake_cells = []
 snake_points = []
-cell_idx = 0
 
+# Snake traversal path (zigzag column by column)
 for c in range(cols):
     col_cx = local_x0 + c * (cell_size + gap) + cell_size / 2
     if c % 2 == 0:
@@ -60,12 +72,12 @@ for c in range(cols):
     for r in row_range:
         snake_points.append((col_cx, local_y0 + r * (cell_size + gap) + cell_size / 2))
 
+# Grid cells mapped to exact GitHub weeks & days
 for col in range(cols):
     for row in range(rows):
-        if cell_idx < len(recent_days):
-            level = min(recent_days[cell_idx].get('level', 0), 4)
-        else:
-            level = 0
+        idx = col * 7 + row
+        c_info = grid_cells_data[idx]
+        level = min(c_info.get('level', 0), 4)
         fill = colors[level]
         x = local_x0 + col * (cell_size + gap)
         y = local_y0 + row * (cell_size + gap)
@@ -73,7 +85,6 @@ for col in range(cols):
         step = col * 7 + (row if col % 2 == 0 else (6 - row))
         delay = (step / 371.0) * 22.0
         snake_cells.append(f'<rect class="grid-cell" x="{x:.1f}" y="{y:.1f}" width="{cell_size}" height="{cell_size}" rx="2" ry="2" fill="{fill}" style="animation-delay: {delay:.2f}s;" />')
-        cell_idx += 1
 
 path_d = f"M {snake_points[0][0]:.1f},{snake_points[0][1]:.1f} " + " ".join([f"L {p[0]:.1f},{p[1]:.1f}" for p in snake_points[1:]])
 
@@ -258,21 +269,25 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 </g>
 
 <!-- ========================================== -->
-<!-- 2. MAIN QUEST CARD -->
+<!-- 2. MAIN QUEST CARD (PIXEL-PERFECT PADDING) -->
 <!-- ========================================== -->
 <g transform="translate(48, 434)">
-  <rect x="0" y="0" width="804" height="78" rx="24" ry="24" fill="#2A1A4A" />
+  <rect x="0" y="0" width="804" height="80" rx="24" ry="24" fill="#2A1A4A" />
+  
+  <!-- Lilac Badge with Generous Padding -->
   <g class="glow-badge" transform="translate(24, 18)">
-    <rect x="0" y="0" width="168" height="42" rx="12" ry="12" fill="#B79CFF" />
-    <text x="84" y="27" text-anchor="middle" fill="#1B1030" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="17" letter-spacing="0.3">MAIN QUEST</text>
+    <rect x="0" y="0" width="196" height="44" rx="14" ry="14" fill="#B79CFF" />
+    <text x="98" y="22" text-anchor="middle" dominant-baseline="central" fill="#1B1030" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="13.5" letter-spacing="0.4">MAIN QUEST</text>
   </g>
-  <text x="216" y="44" fill="#F6F1FF" font-family="'DM Sans', system-ui, sans-serif" font-weight="500" font-size="15.2">Learning vector databases, and how semantic search is built on top of them.</text>
+  
+  <!-- Quest Text with Proper Margin -->
+  <text x="242" y="40" dominant-baseline="central" fill="#F6F1FF" font-family="'DM Sans', system-ui, sans-serif" font-weight="500" font-size="14.8">Learning vector databases, and how semantic search is built on top of them.</text>
 </g>
 
 <!-- ========================================== -->
 <!-- 3. INVENTORY CARD -->
 <!-- ========================================== -->
-<g transform="translate(48, 536)">
+<g transform="translate(48, 538)">
   <rect x="0" y="0" width="804" height="344" rx="24" ry="24" fill="#2A1A4A" />
   <text x="36" y="52" fill="url(#invTitleGrad)" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="32">Inventory</text>
 
@@ -328,9 +343,9 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 </g>
 
 <!-- ========================================== -->
-<!-- 4. COMMIT LOG CARD (WITH REAL SNAKE!) -->
+<!-- 4. COMMIT LOG CARD (WITH REAL 2026 CALENDAR!) -->
 <!-- ========================================== -->
-<g transform="translate(48, 904)">
+<g transform="translate(48, 906)">
   <rect x="0" y="0" width="804" height="492" rx="24" ry="24" fill="#2A1A4A" />
 
   <!-- Header -->
@@ -346,7 +361,7 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
   <g transform="translate(36, 78)">
     <rect x="0" y="0" width="732" height="118" rx="16" ry="16" fill="#1B1030" stroke="#4A3578" stroke-width="1.5" stroke-dasharray="6 6" />
     
-    <!-- Real Grid Cells -->
+    <!-- Real 53-Week Grid Cells -->
     <g>
       {''.join(snake_cells)}
     </g>
@@ -416,7 +431,7 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 <!-- ========================================== -->
 <!-- 5. FOOTER CARD -->
 <!-- ========================================== -->
-<g transform="translate(48, 1420)">
+<g transform="translate(48, 1422)">
   <rect x="0" y="0" width="804" height="78" rx="24" ry="24" fill="#B79CFF" />
   <text x="24" y="47" fill="#1B1030" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="23" letter-spacing="-0.4">Join my party</text>
 
@@ -447,4 +462,4 @@ with open('assets/profile-animated.svg', 'w', encoding='utf-8') as f:
     f.write(full_svg)
 with open('assets-src/profile-animated.svg', 'w', encoding='utf-8') as f:
     f.write(full_svg)
-print('Successfully generated assets/profile-animated.svg (Height: 1530px, with embedded fonts)')
+print('Successfully generated assets/profile-animated.svg with real 2026 calendar data & fixed Main Quest padding!')
