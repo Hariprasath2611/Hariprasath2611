@@ -6,8 +6,12 @@ import os
 from datetime import datetime, timedelta
 from PIL import Image
 
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ROOT_DIR = os.path.dirname(SCRIPT_DIR)
+
 # 1. Process profile photo directly from assets/profile.png
-im = Image.open('assets/profile.png')
+photo_path = os.path.join(ROOT_DIR, 'assets', 'profile.png')
+im = Image.open(photo_path)
 w, h = im.size
 crop_w = int(h * 0.878)
 left = int(w * 0.48 - crop_w * 0.48)
@@ -19,13 +23,15 @@ photo_b64 = base64.b64encode(buf.getvalue()).decode('utf-8')
 
 # 2. Load embedded offline font CSS
 font_css = ''
-if os.path.exists('embedded_fonts.css'):
-    with open('embedded_fonts.css', 'r', encoding='utf-8') as f:
+font_file = os.path.join(SCRIPT_DIR, 'embedded_fonts.css')
+if os.path.exists(font_file):
+    with open(font_file, 'r', encoding='utf-8') as f:
         font_css = f.read()
 
 # 3. Load real contribution data for HARIPRASATH2611
 # Today is 2026-10-18 (Sunday)
-with open('assets/contributions.json', 'r', encoding='utf-8') as f:
+contrib_file = os.path.join(ROOT_DIR, 'assets', 'contributions.json')
+with open(contrib_file, 'r', encoding='utf-8') as f:
     contrib_json = json.load(f)
 
 date_map = {c['date']: c for c in contrib_json.get('contributions', [])}
@@ -458,8 +464,11 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 
 </svg>'''
 
-with open('assets/profile-animated.svg', 'w', encoding='utf-8') as f:
+svg_out_assets = os.path.join(ROOT_DIR, 'assets', 'profile-animated.svg')
+svg_out_src = os.path.join(ROOT_DIR, 'assets-src', 'profile-animated.svg')
+
+with open(svg_out_assets, 'w', encoding='utf-8') as f:
     f.write(full_svg)
-with open('assets-src/profile-animated.svg', 'w', encoding='utf-8') as f:
+with open(svg_out_src, 'w', encoding='utf-8') as f:
     f.write(full_svg)
 print('Successfully generated assets/profile-animated.svg with real 2026 calendar data & fixed Main Quest padding!')
