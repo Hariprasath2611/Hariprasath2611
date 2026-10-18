@@ -418,10 +418,10 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 <!-- ========================================== -->
 <g transform="translate(48, 1420)">
   <rect x="0" y="0" width="804" height="78" rx="24" ry="24" fill="#B79CFF" />
-  <text x="28" y="47" fill="#1B1030" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="24" letter-spacing="-0.5">Join my party</text>
+  <text x="24" y="47" fill="#1B1030" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="23" letter-spacing="-0.4">Join my party</text>
 
   <!-- Right Aligned Pills -->
-  <g transform="translate(268, 20)">
+  <g transform="translate(276, 20)">
     <!-- Dark Portfolio Pill -->
     <g transform="translate(0, 0)">
       <rect x="0" y="0" width="268" height="38" rx="19" ry="19" fill="#1B1030" />
