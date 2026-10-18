@@ -2,6 +2,7 @@ import base64
 import json
 import urllib.request
 import io
+import os
 from PIL import Image
 
 # 1. Process profile photo directly from assets/profile.png
@@ -15,7 +16,13 @@ buf = io.BytesIO()
 crop_resized.save(buf, format='JPEG', quality=90, optimize=True)
 photo_b64 = base64.b64encode(buf.getvalue()).decode('utf-8')
 
-# 2. Fetch real contribution data for HARIPRASATH2611
+# 2. Load embedded offline font CSS
+font_css = ''
+if os.path.exists('embedded_fonts.css'):
+    with open('embedded_fonts.css', 'r', encoding='utf-8') as f:
+        font_css = f.read()
+
+# 3. Fetch real contribution data for HARIPRASATH2611
 try:
     req = urllib.request.Request('https://github-contributions-api.jogruber.de/v4/HARIPRASATH2611', headers={'User-Agent': 'Mozilla/5.0'})
     data = json.loads(urllib.request.urlopen(req, timeout=10).read().decode('utf-8'))
@@ -29,7 +36,7 @@ except Exception as e:
 
 colors = ['#34225A', '#6E4FB5', '#B79CFF', '#FFB27A', '#FF8A3D']
 
-# 3. Generate snake path and cells inside Commit Log dashed container
+# 4. Generate snake path and cells inside Commit Log dashed container
 # Container width: 732, height: 118
 cols = 53
 rows = 7
@@ -70,11 +77,11 @@ for col in range(cols):
 
 path_d = f"M {snake_points[0][0]:.1f},{snake_points[0][1]:.1f} " + " ".join([f"L {p[0]:.1f},{p[1]:.1f}" for p in snake_points[1:]])
 
-# 4. Assemble the Unified SVG
+# 5. Assemble the Unified SVG
 full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 900 1530" width="100%" height="100%">
 <defs>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&amp;family=Syne:wght@700;800&amp;display=swap');
+{font_css}
 
     * {{ box-sizing: border-box; }}
     
@@ -179,7 +186,7 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
   </clipPath>
 
   <clipPath id="darkPillClip">
-    <rect x="0" y="0" width="250" height="38" rx="19" ry="19" />
+    <rect x="0" y="0" width="268" height="38" rx="19" ry="19" />
   </clipPath>
 
   <linearGradient id="invTitleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -411,25 +418,25 @@ full_svg = f'''<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w
 <!-- ========================================== -->
 <g transform="translate(48, 1420)">
   <rect x="0" y="0" width="804" height="78" rx="24" ry="24" fill="#B79CFF" />
-  <text x="24" y="48" fill="#1B1030" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="26" letter-spacing="-0.5">Join my party</text>
+  <text x="28" y="47" fill="#1B1030" font-family="'Syne', system-ui, sans-serif" font-weight="800" font-size="24" letter-spacing="-0.5">Join my party</text>
 
   <!-- Right Aligned Pills -->
-  <g transform="translate(296, 20)">
+  <g transform="translate(268, 20)">
     <!-- Dark Portfolio Pill -->
     <g transform="translate(0, 0)">
-      <rect x="0" y="0" width="250" height="38" rx="19" ry="19" fill="#1B1030" />
+      <rect x="0" y="0" width="268" height="38" rx="19" ry="19" fill="#1B1030" />
       <g clip-path="url(#darkPillClip)">
         <rect x="0" y="-10" width="50" height="60" fill="url(#shineGrad)" class="shine-rect">
           <animateTransform attributeName="transform" type="translate" values="-160 0; 360 0" dur="4.5s" repeatCount="indefinite" />
         </rect>
       </g>
-      <text x="125" y="24" text-anchor="middle" fill="#F6F1FF" font-family="'Space Mono', monospace" font-size="10" font-weight="700" letter-spacing="-0.3">hariprasathportfolio-zeta.vercel.app</text>
+      <text x="134" y="24" text-anchor="middle" fill="#F6F1FF" font-family="'Space Mono', monospace" font-size="10.2" font-weight="700" letter-spacing="-0.3">hariprasathportfolio-zeta.vercel.app</text>
     </g>
 
     <!-- Outlined Email Pill -->
-    <g transform="translate(258, 0)">
-      <rect x="0" y="0" width="226" height="38" rx="19" ry="19" fill="none" stroke="#1B1030" stroke-width="1.2" />
-      <text x="113" y="24" text-anchor="middle" fill="#1B1030" font-family="'Space Mono', monospace" font-size="9.8" font-weight="700" letter-spacing="-0.2">[hariprasathd26112006@gmail.com]</text>
+    <g transform="translate(278, 0)">
+      <rect x="0" y="0" width="228" height="38" rx="19" ry="19" fill="none" stroke="#1B1030" stroke-width="1.2" />
+      <text x="114" y="24" text-anchor="middle" fill="#1B1030" font-family="'Space Mono', monospace" font-size="10" font-weight="700" letter-spacing="-0.2">[hariprasathd26112006@gmail.com]</text>
     </g>
   </g>
 </g>
@@ -440,4 +447,4 @@ with open('assets/profile-animated.svg', 'w', encoding='utf-8') as f:
     f.write(full_svg)
 with open('assets-src/profile-animated.svg', 'w', encoding='utf-8') as f:
     f.write(full_svg)
-print('Successfully generated assets/profile-animated.svg (Height: 1530px)')
+print('Successfully generated assets/profile-animated.svg (Height: 1530px, with embedded fonts)')
